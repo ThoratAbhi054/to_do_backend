@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "to-do-list"
+version = "0.1.0"
+description = "A to-do list app for task management"
+authors = ["Abhishek <abhishek.thorat@tejgyan.org>"]
+#readme = "README.md"
+packages = [{include = "to_do_list"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
