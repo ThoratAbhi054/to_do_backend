@@ -96,7 +96,19 @@ If you prefer to run the project without Docker, follow these steps:
    python manage.py migrate
    ```
 
-5. **Create a superuser (optional)**
+5. **Add .env**
+
+   ```
+   POSTGRES_USER=postgres
+   POSTGRES_PASSWORD=root
+   POSTGRES_HOST=127.0.0.1
+   POSTGRES_PORT=5432
+   POSTGRES_DB=to_do
+   DEBUG=True
+
+   ```
+
+6. **Create a superuser (optional)**
 
    You can create a superuser to access the Django admin:
 
@@ -104,7 +116,7 @@ If you prefer to run the project without Docker, follow these steps:
    python manage.py createsuperuser
    ```
 
-6. **Run the development server**
+7. **Run the development server**
 
    ```bash
    python manage.py runserver
@@ -112,7 +124,7 @@ If you prefer to run the project without Docker, follow these steps:
 
    The server will start at `http://127.0.0.1:8000/`.
 
-### 7. Access the API
+### 8. Access the API
 
 You can access the REST API at the following endpoints:
 
