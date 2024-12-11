@@ -15,6 +15,13 @@ class TaskViewSet(viewsets.ModelViewSet):
     filterset_class = TaskFilter
     permission_classes = [permissions.AllowAny]
 
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        if not self.request.user.is_staff and not self.request.user.is_superuser:
+            queryset = queryset.filter(user=self.request.user)
+        return queryset
+
     def get_serializer_class(self):
         if self.action in ["create", "partial_update"]:
             return TaskCreateSerializer
